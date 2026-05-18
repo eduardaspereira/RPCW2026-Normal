@@ -1,0 +1,1052 @@
+@prefix : <http://www.di.uminho.pt/rpcw2026/PG61516#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rpcw: <http://www.di.uminho.pt/rpcw2026/PG61516#> .
+@base <http://www.di.uminho.pt/rpcw2026/PG61516#> .
+
+<http://www.di.uminho.pt/rpcw2026/PG61516> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#designedGame
+rpcw:designedGame rdf:type owl:ObjectProperty ;
+                  rdfs:domain rpcw:Autor ;
+                  rdfs:range rpcw:Jogo .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#publishedGame
+rpcw:publishedGame rdf:type owl:ObjectProperty ;
+                   rdfs:domain rpcw:Editora ;
+                   rdfs:range rpcw:Jogo .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#usedInGame
+rpcw:usedInGame rdf:type owl:ObjectProperty ;
+                rdfs:domain rpcw:Mecanica ;
+                rdfs:range rpcw:Jogo .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#wonByGame
+rpcw:wonByGame rdf:type owl:ObjectProperty ;
+               rdfs:domain rpcw:Premio ;
+               rdfs:range rpcw:Jogo .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#category
+rpcw:category rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#country
+rpcw:country rdf:type owl:DatatypeProperty .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#descriptionEN
+rpcw:descriptionEN rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#maxPlayers
+rpcw:maxPlayers rdf:type owl:DatatypeProperty .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#minPlayers
+rpcw:minPlayers rdf:type owl:DatatypeProperty .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#name
+rpcw:name rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#playingTimeMinutes
+rpcw:playingTimeMinutes rdf:type owl:DatatypeProperty .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#year
+rpcw:year rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#Autor
+rpcw:Autor rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#Editora
+rpcw:Editora rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#Jogo
+rpcw:Jogo rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#Mecanica
+rpcw:Mecanica rdf:type owl:Class .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#Premio
+rpcw:Premio rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#alan-r-moon
+rpcw:alan-r-moon rdf:type owl:NamedIndividual ,
+                          rpcw:Autor ;
+                 rpcw:designedGame rpcw:ticket-to-ride ;
+                 rpcw:name "Alan R. Moon" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#andreas-seyfarth
+rpcw:andreas-seyfarth rdf:type owl:NamedIndividual ,
+                               rpcw:Autor ;
+                      rpcw:designedGame rpcw:puerto-rico ;
+                      rpcw:name "Andreas Seyfarth" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#antoine-bauza
+rpcw:antoine-bauza rdf:type owl:NamedIndividual ,
+                            rpcw:Autor ;
+                   rpcw:designedGame <http://www.di.uminho.pt/rpcw2026/PG61516#7-wonders> ;
+                   rpcw:name "Antoine Bauza" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#area-majority
+rpcw:area-majority rdf:type owl:NamedIndividual ,
+                            rpcw:Mecanica ;
+                   rpcw:usedInGame rpcw:blood-rage ,
+                                   rpcw:carcassonne ,
+                                   rpcw:root ,
+                                   rpcw:scythe ,
+                                   rpcw:twilight-imperium-4 ;
+                   rpcw:name "Area Majority / Influence" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#ark-nova
+rpcw:ark-nova rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Strategy" ;
+              rpcw:descriptionEN "Plan and design a modern, scientifically managed zoo to support conservation projects." ;
+              rpcw:maxPlayers 4 ;
+              rpcw:minPlayers 1 ;
+              rpcw:name "Ark Nova" ;
+              rpcw:playingTimeMinutes 150 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#azul
+rpcw:azul rdf:type owl:NamedIndividual ,
+                   rpcw:Jogo ;
+          rpcw:category "Family" ;
+          rpcw:descriptionEN "Players take turns drafting colored tiles from suppliers to their player board to score points." ;
+          rpcw:maxPlayers 4 ;
+          rpcw:minPlayers 2 ;
+          rpcw:name "Azul" ;
+          rpcw:playingTimeMinutes 45 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#blood-rage
+rpcw:blood-rage rdf:type owl:NamedIndividual ,
+                         rpcw:Jogo ;
+                rpcw:category "Strategy" ;
+                rpcw:descriptionEN "Ragnarök has come! Draft cards, lead your Viking clan to glory, and die in battle." ;
+                rpcw:maxPlayers 4 ;
+                rpcw:minPlayers 2 ;
+                rpcw:name "Blood Rage" ;
+                rpcw:playingTimeMinutes 90 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#brass-birmingham
+rpcw:brass-birmingham rdf:type owl:NamedIndividual ,
+                               rpcw:Jogo ;
+                      rpcw:category "Strategy" ;
+                      rpcw:descriptionEN "Build networks, grow industries, and navigate the world of the Industrial Revolution." ;
+                      rpcw:maxPlayers 4 ;
+                      rpcw:minPlayers 2 ;
+                      rpcw:name "Brass: Birmingham" ;
+                      rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#carcassonne
+rpcw:carcassonne rdf:type owl:NamedIndividual ,
+                          rpcw:Jogo ;
+                 rpcw:category "Family" ;
+                 rpcw:descriptionEN "Players draw and place a tile with a piece of southern French landscape on it." ;
+                 rpcw:maxPlayers 5 ;
+                 rpcw:minPlayers 2 ;
+                 rpcw:name "Carcassonne" ;
+                 rpcw:playingTimeMinutes 45 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#card-drafting
+rpcw:card-drafting rdf:type owl:NamedIndividual ,
+                            rpcw:Mecanica ;
+                   rpcw:usedInGame rpcw:blood-rage ,
+                                   rpcw:wingspan ,
+                                   <http://www.di.uminho.pt/rpcw2026/PG61516#7-wonders> ;
+                   rpcw:name "Card Drafting" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#cascadia
+rpcw:cascadia rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Family" ;
+              rpcw:descriptionEN "Create the most harmonious ecosystem as you draft habitats and wildlife." ;
+              rpcw:maxPlayers 4 ;
+              rpcw:minPlayers 1 ;
+              rpcw:name "Cascadia" ;
+              rpcw:playingTimeMinutes 45 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#castles-of-burgundy
+rpcw:castles-of-burgundy rdf:type owl:NamedIndividual ,
+                                  rpcw:Jogo ;
+                         rpcw:category "Strategy" ;
+                         rpcw:descriptionEN "Plan, trade, and build your Burgundian estate to prosperity and prominence." ;
+                         rpcw:maxPlayers 4 ;
+                         rpcw:minPlayers 2 ;
+                         rpcw:name "The Castles of Burgundy" ;
+                         rpcw:playingTimeMinutes 90 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#catan
+rpcw:catan rdf:type owl:NamedIndividual ,
+                    rpcw:Jogo ;
+           rpcw:category "Family" ;
+           rpcw:descriptionEN "Players take on the roles of settlers, each attempting to build and develop holdings while trading and acquiring resources." ;
+           rpcw:maxPlayers 4 ;
+           rpcw:minPlayers 3 ;
+           rpcw:name "Catan" ;
+           rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#cephalofair
+rpcw:cephalofair rdf:type owl:NamedIndividual ,
+                          rpcw:Editora ;
+                 rpcw:publishedGame rpcw:gloomhaven ;
+                 rpcw:country "USA" ;
+                 rpcw:name "Cephalofair Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#christian-t-petersen
+rpcw:christian-t-petersen rdf:type owl:NamedIndividual ,
+                                   rpcw:Autor ;
+                          rpcw:designedGame rpcw:twilight-imperium-4 ;
+                          rpcw:name "Christian T. Petersen" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#cmon
+rpcw:cmon rdf:type owl:NamedIndividual ,
+                   rpcw:Editora ;
+          rpcw:publishedGame rpcw:blood-rage ;
+          rpcw:country "Singapore" ;
+          rpcw:name "CMON" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#codenames
+rpcw:codenames rdf:type owl:NamedIndividual ,
+                        rpcw:Jogo ;
+               rpcw:category "Party" ;
+               rpcw:descriptionEN "Give your team clever one-word clues to help them spot their agents in the field." ;
+               rpcw:maxPlayers 8 ;
+               rpcw:minPlayers 2 ;
+               rpcw:name "Codenames" ;
+               rpcw:playingTimeMinutes 15 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#cole-wehrle
+rpcw:cole-wehrle rdf:type owl:NamedIndividual ,
+                          rpcw:Autor ;
+                 rpcw:designedGame rpcw:root ;
+                 rpcw:name "Cole Wehrle" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#cooperative-game
+rpcw:cooperative-game rdf:type owl:NamedIndividual ,
+                               rpcw:Mecanica ;
+                      rpcw:usedInGame rpcw:gloomhaven ,
+                                      rpcw:pandemic ,
+                                      rpcw:spirit-island ;
+                      rpcw:name "Cooperative Game" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#czech-games-edition
+rpcw:czech-games-edition rdf:type owl:NamedIndividual ,
+                                  rpcw:Editora ;
+                         rpcw:publishedGame rpcw:codenames ,
+                                            rpcw:lost-ruins-of-arnak ;
+                         rpcw:country "Czech Republic" ;
+                         rpcw:name "Czech Games Edition" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#days-of-wonder
+rpcw:days-of-wonder rdf:type owl:NamedIndividual ,
+                             rpcw:Editora ;
+                    rpcw:publishedGame rpcw:ticket-to-ride ;
+                    rpcw:country "France" ;
+                    rpcw:name "Days of Wonder" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#deck-building
+rpcw:deck-building rdf:type owl:NamedIndividual ,
+                            rpcw:Mecanica ;
+                   rpcw:usedInGame rpcw:ark-nova ,
+                                   rpcw:dominion ,
+                                   rpcw:dune-imperium ,
+                                   rpcw:lost-ruins-of-arnak ;
+                   rpcw:name "Deck, Bag, and Pool Building" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dice-rolling
+rpcw:dice-rolling rdf:type owl:NamedIndividual ,
+                           rpcw:Mecanica ;
+                  rpcw:usedInGame rpcw:castles-of-burgundy ,
+                                  rpcw:catan ,
+                                  rpcw:king-of-tokyo ;
+                  rpcw:name "Dice Rolling" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dire-wolf
+rpcw:dire-wolf rdf:type owl:NamedIndividual ,
+                        rpcw:Editora ;
+               rpcw:publishedGame rpcw:dune-imperium ;
+               rpcw:country "USA" ;
+               rpcw:name "Dire Wolf" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dominion
+rpcw:dominion rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Strategy" ;
+              rpcw:descriptionEN "Acquire lands, hire subjects, and build the ultimate deck to rule your kingdom." ;
+              rpcw:maxPlayers 4 ;
+              rpcw:minPlayers 2 ;
+              rpcw:name "Dominion" ;
+              rpcw:playingTimeMinutes 30 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#donald-x-vaccarino
+rpcw:donald-x-vaccarino rdf:type owl:NamedIndividual ,
+                                 rpcw:Autor ;
+                        rpcw:designedGame rpcw:dominion ;
+                        rpcw:name "Donald X. Vaccarino" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dsp-2011
+rpcw:dsp-2011 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame <http://www.di.uminho.pt/rpcw2026/PG61516#7-wonders> ;
+              rpcw:name "Deutscher Spiele Preis" ;
+              rpcw:year 2011 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dsp-2017
+rpcw:dsp-2017 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:terraforming-mars ;
+              rpcw:name "Deutscher Spiele Preis" ;
+              rpcw:year 2017 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dsp-2022
+rpcw:dsp-2022 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:ark-nova ;
+              rpcw:name "Deutscher Spiele Preis" ;
+              rpcw:year 2022 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#dune-imperium
+rpcw:dune-imperium rdf:type owl:NamedIndividual ,
+                            rpcw:Jogo ;
+                   rpcw:category "Strategy" ;
+                   rpcw:descriptionEN "Influence, intrigue, and combat in the universe of Dune using deck-building and worker placement." ;
+                   rpcw:maxPlayers 4 ;
+                   rpcw:minPlayers 1 ;
+                   rpcw:name "Dune: Imperium" ;
+                   rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#elizabeth-hargrave
+rpcw:elizabeth-hargrave rdf:type owl:NamedIndividual ,
+                                 rpcw:Autor ;
+                        rpcw:designedGame rpcw:wingspan ;
+                        rpcw:name "Elizabeth Hargrave" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#engine-building
+rpcw:engine-building rdf:type owl:NamedIndividual ,
+                              rpcw:Mecanica ;
+                     rpcw:usedInGame rpcw:scythe ,
+                                     rpcw:terraforming-mars ;
+                     rpcw:name "Engine Building" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#eric-m-lang
+rpcw:eric-m-lang rdf:type owl:NamedIndividual ,
+                          rpcw:Autor ;
+                 rpcw:designedGame rpcw:blood-rage ;
+                 rpcw:name "Eric M. Lang" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#everdell
+rpcw:everdell rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Strategy" ;
+              rpcw:descriptionEN "A game of dynamic tableau building and worker placement in a charming forest." ;
+              rpcw:maxPlayers 4 ;
+              rpcw:minPlayers 1 ;
+              rpcw:name "Everdell" ;
+              rpcw:playingTimeMinutes 80 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#fantasy-flight-games
+rpcw:fantasy-flight-games rdf:type owl:NamedIndividual ,
+                                   rpcw:Editora ;
+                          rpcw:publishedGame rpcw:twilight-imperium-4 ;
+                          rpcw:country "USA" ;
+                          rpcw:name "Fantasy Flight Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#feuerland-spiele
+rpcw:feuerland-spiele rdf:type owl:NamedIndividual ,
+                               rpcw:Editora ;
+                      rpcw:publishedGame rpcw:ark-nova ;
+                      rpcw:country "Germany" ;
+                      rpcw:name "Feuerland Spiele" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#flatout-games
+rpcw:flatout-games rdf:type owl:NamedIndividual ,
+                            rpcw:Editora ;
+                   rpcw:publishedGame rpcw:cascadia ;
+                   rpcw:country "USA" ;
+                   rpcw:name "Flatout Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#fryxgames
+rpcw:fryxgames rdf:type owl:NamedIndividual ,
+                        rpcw:Editora ;
+               rpcw:publishedGame rpcw:terraforming-mars ;
+               rpcw:country "Sweden" ;
+               rpcw:name "FryxGames" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#gg-2013
+rpcw:gg-2013 rdf:type owl:NamedIndividual ,
+                      rpcw:Premio ;
+             rpcw:wonByGame rpcw:pandemic ;
+             rpcw:name "Golden Geek Board Game of the Year" ;
+             rpcw:year 2013 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#gg-2016
+rpcw:gg-2016 rdf:type owl:NamedIndividual ,
+                      rpcw:Premio ;
+             rpcw:wonByGame rpcw:scythe ;
+             rpcw:name "Golden Geek Board Game of the Year" ;
+             rpcw:year 2016 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#gg-2017
+rpcw:gg-2017 rdf:type owl:NamedIndividual ,
+                      rpcw:Premio ;
+             rpcw:wonByGame rpcw:gloomhaven ;
+             rpcw:name "Golden Geek Board Game of the Year" ;
+             rpcw:year 2017 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#gg-2018
+rpcw:gg-2018 rdf:type owl:NamedIndividual ,
+                      rpcw:Premio ;
+             rpcw:wonByGame rpcw:root ;
+             rpcw:name "Golden Geek Board Game of the Year" ;
+             rpcw:year 2018 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#gloomhaven
+rpcw:gloomhaven rdf:type owl:NamedIndividual ,
+                         rpcw:Jogo ;
+                rpcw:category "Strategy" ;
+                rpcw:descriptionEN "A cooperative game of tactical combat in a unique, evolving fantasy world." ;
+                rpcw:maxPlayers 4 ;
+                rpcw:minPlayers 1 ;
+                rpcw:name "Gloomhaven" ;
+                rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#greater-than-games
+rpcw:greater-than-games rdf:type owl:NamedIndividual ,
+                                 rpcw:Editora ;
+                        rpcw:publishedGame rpcw:spirit-island ;
+                        rpcw:country "USA" ;
+                        rpcw:name "Greater Than Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#grid-movement
+rpcw:grid-movement rdf:type owl:NamedIndividual ,
+                            rpcw:Mecanica ;
+                   rpcw:usedInGame rpcw:gloomhaven ,
+                                   rpcw:scythe ;
+                   rpcw:name "Grid Movement" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#hand-management
+rpcw:hand-management rdf:type owl:NamedIndividual ,
+                              rpcw:Mecanica ;
+                     rpcw:usedInGame rpcw:gloomhaven ,
+                                     rpcw:terraforming-mars ,
+                                     rpcw:ticket-to-ride ;
+                     rpcw:name "Hand Management" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#hans-im-gluck
+rpcw:hans-im-gluck rdf:type owl:NamedIndividual ,
+                            rpcw:Editora ;
+                   rpcw:publishedGame rpcw:carcassonne ;
+                   rpcw:country "Germany" ;
+                   rpcw:name "Hans im Glück" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#iello
+rpcw:iello rdf:type owl:NamedIndividual ,
+                    rpcw:Editora ;
+           rpcw:publishedGame rpcw:king-of-tokyo ;
+           rpcw:country "France" ;
+           rpcw:name "IELLO" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#isaac-childres
+rpcw:isaac-childres rdf:type owl:NamedIndividual ,
+                             rpcw:Autor ;
+                    rpcw:designedGame rpcw:gloomhaven ;
+                    rpcw:name "Isaac Childres" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#jacob-fryxelius
+rpcw:jacob-fryxelius rdf:type owl:NamedIndividual ,
+                              rpcw:Autor ;
+                     rpcw:designedGame rpcw:terraforming-mars ;
+                     rpcw:name "Jacob Fryxelius" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#james-a-wilson
+rpcw:james-a-wilson rdf:type owl:NamedIndividual ,
+                             rpcw:Autor ;
+                    rpcw:designedGame rpcw:everdell ;
+                    rpcw:name "James A. Wilson" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#jamey-stegmaier
+rpcw:jamey-stegmaier rdf:type owl:NamedIndividual ,
+                              rpcw:Autor ;
+                     rpcw:designedGame rpcw:scythe ;
+                     rpcw:name "Jamey Stegmaier" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#king-of-tokyo
+rpcw:king-of-tokyo rdf:type owl:NamedIndividual ,
+                            rpcw:Jogo ;
+                   rpcw:category "Party" ;
+                   rpcw:descriptionEN "Mutant monsters, gigantic robots, and fierce aliens battle for control of Tokyo." ;
+                   rpcw:maxPlayers 6 ;
+                   rpcw:minPlayers 2 ;
+                   rpcw:name "King of Tokyo" ;
+                   rpcw:playingTimeMinutes 30 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#klaus-jurgen-wrede
+rpcw:klaus-jurgen-wrede rdf:type owl:NamedIndividual ,
+                                 rpcw:Autor ;
+                        rpcw:designedGame rpcw:carcassonne ;
+                        rpcw:name "Klaus-Jürgen Wrede" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#klaus-teuber
+rpcw:klaus-teuber rdf:type owl:NamedIndividual ,
+                           rpcw:Autor ;
+                  rpcw:designedGame rpcw:catan ;
+                  rpcw:name "Klaus Teuber" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#kosmos
+rpcw:kosmos rdf:type owl:NamedIndividual ,
+                     rpcw:Editora ;
+            rpcw:publishedGame rpcw:catan ;
+            rpcw:country "Germany" ;
+            rpcw:name "KOSMOS" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#ksdj-2019
+rpcw:ksdj-2019 rdf:type owl:NamedIndividual ,
+                        rpcw:Premio ;
+               rpcw:wonByGame rpcw:wingspan ;
+               rpcw:name "Kennerspiel des Jahres" ;
+               rpcw:year 2019 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#leder-games
+rpcw:leder-games rdf:type owl:NamedIndividual ,
+                          rpcw:Editora ;
+                 rpcw:publishedGame rpcw:root ;
+                 rpcw:country "USA" ;
+                 rpcw:name "Leder Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#lookout-games
+rpcw:lookout-games rdf:type owl:NamedIndividual ,
+                            rpcw:Editora ;
+                   rpcw:publishedGame rpcw:patchwork ;
+                   rpcw:country "Germany" ;
+                   rpcw:name "Lookout Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#lost-ruins-of-arnak
+rpcw:lost-ruins-of-arnak rdf:type owl:NamedIndividual ,
+                                  rpcw:Jogo ;
+                         rpcw:category "Strategy" ;
+                         rpcw:descriptionEN "Explore a mysterious island, discover artifacts, and face formidable guardians." ;
+                         rpcw:maxPlayers 4 ;
+                         rpcw:minPlayers 1 ;
+                         rpcw:name "Lost Ruins of Arnak" ;
+                         rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#marc-andre
+rpcw:marc-andre rdf:type owl:NamedIndividual ,
+                         rpcw:Autor ;
+                rpcw:designedGame rpcw:splendor ;
+                rpcw:name "Marc André" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#martin-wallace
+rpcw:martin-wallace rdf:type owl:NamedIndividual ,
+                             rpcw:Autor ;
+                    rpcw:designedGame rpcw:brass-birmingham ;
+                    rpcw:name "Martin Wallace" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#mathias-wigge
+rpcw:mathias-wigge rdf:type owl:NamedIndividual ,
+                            rpcw:Autor ;
+                   rpcw:designedGame rpcw:ark-nova ;
+                   rpcw:name "Mathias Wigge" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#matt-leacock
+rpcw:matt-leacock rdf:type owl:NamedIndividual ,
+                           rpcw:Autor ;
+                  rpcw:designedGame rpcw:pandemic ;
+                  rpcw:name "Matt Leacock" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#michael-kiesling
+rpcw:michael-kiesling rdf:type owl:NamedIndividual ,
+                               rpcw:Autor ;
+                      rpcw:designedGame rpcw:azul ;
+                      rpcw:name "Michael Kiesling" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#min-elwen
+rpcw:min-elwen rdf:type owl:NamedIndividual ,
+                        rpcw:Autor ;
+               rpcw:designedGame rpcw:lost-ruins-of-arnak ;
+               rpcw:name "Min & Elwen" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#network-building
+rpcw:network-building rdf:type owl:NamedIndividual ,
+                               rpcw:Mecanica ;
+                      rpcw:usedInGame rpcw:brass-birmingham ;
+                      rpcw:name "Network and Route Building" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#pandemic
+rpcw:pandemic rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Family" ;
+              rpcw:descriptionEN "Your team of experts must prevent the world from succumbing to a viral pandemic." ;
+              rpcw:maxPlayers 4 ;
+              rpcw:minPlayers 2 ;
+              rpcw:name "Pandemic" ;
+              rpcw:playingTimeMinutes 45 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#patchwork
+rpcw:patchwork rdf:type owl:NamedIndividual ,
+                        rpcw:Jogo ;
+               rpcw:category "Family" ;
+               rpcw:descriptionEN "Compete to build the most aesthetic (and high-scoring) patchwork quilt." ;
+               rpcw:maxPlayers 2 ;
+               rpcw:minPlayers 2 ;
+               rpcw:name "Patchwork" ;
+               rpcw:playingTimeMinutes 30 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#paul-dennen
+rpcw:paul-dennen rdf:type owl:NamedIndividual ,
+                          rpcw:Autor ;
+                 rpcw:designedGame rpcw:dune-imperium ;
+                 rpcw:name "Paul Dennen" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#plan-b-games
+rpcw:plan-b-games rdf:type owl:NamedIndividual ,
+                           rpcw:Editora ;
+                  rpcw:publishedGame rpcw:azul ;
+                  rpcw:country "Canada" ;
+                  rpcw:name "Plan B Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#puerto-rico
+rpcw:puerto-rico rdf:type owl:NamedIndividual ,
+                          rpcw:Jogo ;
+                 rpcw:category "Strategy" ;
+                 rpcw:descriptionEN "Ship goods, construct buildings, and choose roles to become the most prosperous in Puerto Rico." ;
+                 rpcw:maxPlayers 5 ;
+                 rpcw:minPlayers 3 ;
+                 rpcw:name "Puerto Rico" ;
+                 rpcw:playingTimeMinutes 150 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#push-your-luck
+rpcw:push-your-luck rdf:type owl:NamedIndividual ,
+                             rpcw:Mecanica ;
+                    rpcw:usedInGame rpcw:codenames ,
+                                    rpcw:king-of-tokyo ;
+                    rpcw:name "Push Your Luck" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#r-eric-reuss
+rpcw:r-eric-reuss rdf:type owl:NamedIndividual ,
+                           rpcw:Autor ;
+                  rpcw:designedGame rpcw:spirit-island ;
+                  rpcw:name "R. Eric Reuss" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#randy-flynn
+rpcw:randy-flynn rdf:type owl:NamedIndividual ,
+                          rpcw:Autor ;
+                 rpcw:designedGame rpcw:cascadia ;
+                 rpcw:name "Randy Flynn" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#ravensburger
+rpcw:ravensburger rdf:type owl:NamedIndividual ,
+                           rpcw:Editora ;
+                  rpcw:publishedGame rpcw:castles-of-burgundy ,
+                                     rpcw:puerto-rico ;
+                  rpcw:country "Germany" ;
+                  rpcw:name "Ravensburger" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#repos-production
+rpcw:repos-production rdf:type owl:NamedIndividual ,
+                               rpcw:Editora ;
+                      rpcw:publishedGame <http://www.di.uminho.pt/rpcw2026/PG61516#7-wonders> ;
+                      rpcw:country "Belgium" ;
+                      rpcw:name "Repos Production" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#richard-garfield
+rpcw:richard-garfield rdf:type owl:NamedIndividual ,
+                               rpcw:Autor ;
+                      rpcw:designedGame rpcw:king-of-tokyo ;
+                      rpcw:name "Richard Garfield" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#rio-grande-games
+rpcw:rio-grande-games rdf:type owl:NamedIndividual ,
+                               rpcw:Editora ;
+                      rpcw:publishedGame rpcw:dominion ;
+                      rpcw:country "USA" ;
+                      rpcw:name "Rio Grande Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#root
+rpcw:root rdf:type owl:NamedIndividual ,
+                   rpcw:Jogo ;
+          rpcw:category "Strategy" ;
+          rpcw:descriptionEN "A game of woodland might and right, with highly asymmetric factions." ;
+          rpcw:maxPlayers 4 ;
+          rpcw:minPlayers 2 ;
+          rpcw:name "Root" ;
+          rpcw:playingTimeMinutes 90 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#route-building
+rpcw:route-building rdf:type owl:NamedIndividual ,
+                             rpcw:Mecanica ;
+                    rpcw:usedInGame rpcw:catan ,
+                                    rpcw:ticket-to-ride ;
+                    rpcw:name "Route Building" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#roxley
+rpcw:roxley rdf:type owl:NamedIndividual ,
+                     rpcw:Editora ;
+            rpcw:publishedGame rpcw:brass-birmingham ;
+            rpcw:country "Canada" ;
+            rpcw:name "Roxley" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#scythe
+rpcw:scythe rdf:type owl:NamedIndividual ,
+                     rpcw:Jogo ;
+            rpcw:category "Strategy" ;
+            rpcw:descriptionEN "An engine-building, asymmetric, competitive board game set in an alternate-history 1920s period." ;
+            rpcw:maxPlayers 5 ;
+            rpcw:minPlayers 1 ;
+            rpcw:name "Scythe" ;
+            rpcw:playingTimeMinutes 115 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-1995
+rpcw:sdj-1995 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:catan ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 1995 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-2001
+rpcw:sdj-2001 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:carcassonne ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 2001 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-2004
+rpcw:sdj-2004 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:ticket-to-ride ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 2004 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-2009
+rpcw:sdj-2009 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:dominion ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 2009 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-2016
+rpcw:sdj-2016 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:codenames ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 2016 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-2018
+rpcw:sdj-2018 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:azul ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 2018 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#sdj-2022
+rpcw:sdj-2022 rdf:type owl:NamedIndividual ,
+                       rpcw:Premio ;
+              rpcw:wonByGame rpcw:cascadia ;
+              rpcw:name "Spiel des Jahres" ;
+              rpcw:year 2022 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#set-collection
+rpcw:set-collection rdf:type owl:NamedIndividual ,
+                             rpcw:Mecanica ;
+                    rpcw:usedInGame rpcw:azul ,
+                                    rpcw:pandemic ,
+                                    rpcw:splendor ,
+                                    rpcw:terraforming-mars ,
+                                    rpcw:ticket-to-ride ,
+                                    rpcw:wingspan ;
+                    rpcw:name "Set Collection" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#space-cowboys
+rpcw:space-cowboys rdf:type owl:NamedIndividual ,
+                            rpcw:Editora ;
+                   rpcw:publishedGame rpcw:splendor ;
+                   rpcw:country "France" ;
+                   rpcw:name "Space Cowboys" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#spirit-island
+rpcw:spirit-island rdf:type owl:NamedIndividual ,
+                            rpcw:Jogo ;
+                   rpcw:category "Strategy" ;
+                   rpcw:descriptionEN "Island Spirits join forces to defend their home from colonizing Invaders." ;
+                   rpcw:maxPlayers 4 ;
+                   rpcw:minPlayers 1 ;
+                   rpcw:name "Spirit Island" ;
+                   rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#splendor
+rpcw:splendor rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Family" ;
+              rpcw:descriptionEN "Renaissance merchants race to grab gems, acquire property, and please nobility." ;
+              rpcw:maxPlayers 4 ;
+              rpcw:minPlayers 2 ;
+              rpcw:name "Splendor" ;
+              rpcw:playingTimeMinutes 30 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#starling-games
+rpcw:starling-games rdf:type owl:NamedIndividual ,
+                             rpcw:Editora ;
+                    rpcw:publishedGame rpcw:everdell ;
+                    rpcw:country "USA" ;
+                    rpcw:name "Starling Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#stefan-feld
+rpcw:stefan-feld rdf:type owl:NamedIndividual ,
+                          rpcw:Autor ;
+                 rpcw:designedGame rpcw:castles-of-burgundy ;
+                 rpcw:name "Stefan Feld" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#stonemaier-games
+rpcw:stonemaier-games rdf:type owl:NamedIndividual ,
+                               rpcw:Editora ;
+                      rpcw:publishedGame rpcw:scythe ,
+                                         rpcw:wingspan ;
+                      rpcw:country "USA" ;
+                      rpcw:name "Stonemaier Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#terraforming-mars
+rpcw:terraforming-mars rdf:type owl:NamedIndividual ,
+                                rpcw:Jogo ;
+                       rpcw:category "Strategy" ;
+                       rpcw:descriptionEN "Players control corporations and buy and play cards to terraform the planet Mars." ;
+                       rpcw:maxPlayers 5 ;
+                       rpcw:minPlayers 1 ;
+                       rpcw:name "Terraforming Mars" ;
+                       rpcw:playingTimeMinutes 120 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#ticket-to-ride
+rpcw:ticket-to-ride rdf:type owl:NamedIndividual ,
+                             rpcw:Jogo ;
+                    rpcw:category "Family" ;
+                    rpcw:descriptionEN "Players collect cards of various types of train cars they then use to claim railway routes in North America." ;
+                    rpcw:maxPlayers 5 ;
+                    rpcw:minPlayers 2 ;
+                    rpcw:name "Ticket to Ride" ;
+                    rpcw:playingTimeMinutes 60 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#tile-placement
+rpcw:tile-placement rdf:type owl:NamedIndividual ,
+                             rpcw:Mecanica ;
+                    rpcw:usedInGame rpcw:azul ,
+                                    rpcw:carcassonne ,
+                                    rpcw:cascadia ,
+                                    rpcw:castles-of-burgundy ,
+                                    rpcw:catan ,
+                                    rpcw:patchwork ,
+                                    rpcw:terraforming-mars ;
+                    rpcw:name "Tile Placement" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#twilight-imperium-4
+rpcw:twilight-imperium-4 rdf:type owl:NamedIndividual ,
+                                  rpcw:Jogo ;
+                         rpcw:category "Strategy" ;
+                         rpcw:descriptionEN "Build an empire through trade, politics, and warfare in a galaxy-spanning space opera." ;
+                         rpcw:maxPlayers 6 ;
+                         rpcw:minPlayers 3 ;
+                         rpcw:name "Twilight Imperium: Fourth Edition" ;
+                         rpcw:playingTimeMinutes 480 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#uwe-rosenberg
+rpcw:uwe-rosenberg rdf:type owl:NamedIndividual ,
+                            rpcw:Autor ;
+                   rpcw:designedGame rpcw:patchwork ;
+                   rpcw:name "Uwe Rosenberg" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#variable-player-powers
+rpcw:variable-player-powers rdf:type owl:NamedIndividual ,
+                                     rpcw:Mecanica ;
+                            rpcw:usedInGame rpcw:blood-rage ,
+                                            rpcw:gloomhaven ,
+                                            rpcw:pandemic ,
+                                            rpcw:root ,
+                                            rpcw:scythe ,
+                                            rpcw:spirit-island ,
+                                            rpcw:terraforming-mars ,
+                                            rpcw:twilight-imperium-4 ;
+                            rpcw:name "Variable Player Powers" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#vlaada-chvatil
+rpcw:vlaada-chvatil rdf:type owl:NamedIndividual ,
+                             rpcw:Autor ;
+                    rpcw:designedGame rpcw:codenames ;
+                    rpcw:name "Vlaada Chvátil" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#wingspan
+rpcw:wingspan rdf:type owl:NamedIndividual ,
+                       rpcw:Jogo ;
+              rpcw:category "Strategy" ;
+              rpcw:descriptionEN "Attract a beautiful and diverse collection of birds to your wildlife preserve." ;
+              rpcw:maxPlayers 5 ;
+              rpcw:minPlayers 1 ;
+              rpcw:name "Wingspan" ;
+              rpcw:playingTimeMinutes 70 .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#worker-placement
+rpcw:worker-placement rdf:type owl:NamedIndividual ,
+                               rpcw:Mecanica ;
+                      rpcw:usedInGame rpcw:dune-imperium ,
+                                      rpcw:everdell ,
+                                      rpcw:lost-ruins-of-arnak ;
+                      rpcw:name "Worker Placement" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#z-man-games
+rpcw:z-man-games rdf:type owl:NamedIndividual ,
+                          rpcw:Editora ;
+                 rpcw:publishedGame rpcw:pandemic ;
+                 rpcw:country "USA" ;
+                 rpcw:name "Z-Man Games" .
+
+
+###  http://www.di.uminho.pt/rpcw2026/PG61516#7-wonders
+<http://www.di.uminho.pt/rpcw2026/PG61516#7-wonders> rdf:type owl:NamedIndividual ,
+                                                              rpcw:Jogo ;
+                                                     rpcw:category "Strategy" ;
+                                                     rpcw:descriptionEN "Draft cards to develop your ancient civilization and build its Wonder of the World." ;
+                                                     rpcw:maxPlayers 7 ;
+                                                     rpcw:minPlayers 2 ;
+                                                     rpcw:name "7 Wonders" ;
+                                                     rpcw:playingTimeMinutes 30 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

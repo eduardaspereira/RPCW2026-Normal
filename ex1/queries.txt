@@ -1,0 +1,31 @@
+### 1. Quais são as personagens presentes na história e a que espécie animal pertencem?
+PREFIX : <http://www.semanticweb.org/fabulas/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?personagem ?especie WHERE {
+  ?personagem a ?especie .
+  ?especie rdfs:subClassOf* :Animal .
+  FILTER (?especie != :Animal)
+}
+
+### 2. Que objeto possuía o Corvo no início da história e onde ele estava localizado?
+PREFIX : <http://www.semanticweb.org/fabulas/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?objeto ?localizacao WHERE {
+  :Mestre_Corvo :possuiObjeto ?objeto .
+  :Mestre_Corvo :localizadoEm ?localizacao .
+}
+
+### 3. Quais são as características ou sentimentos associados à personagem "Raposa"? 
+PREFIX : <http://www.semanticweb.org/fabulas/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?caracteristica WHERE {
+  :Mestre_Raposa :temCaracteristica ?caracteristica .
+}
+
+### 4. Que personagem enganou o Corvo? (Recupera a relação de interação criada entre os dois indivíduos) 
+PREFIX : <http://www.semanticweb.org/fabulas/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?personagem ?relacao WHERE {
+  ?personagem ?relacao :Mestre_Corvo .
+  FILTER(?relacao = :enganou)
+}

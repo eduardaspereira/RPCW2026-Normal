@@ -1,0 +1,99 @@
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
+
+# 12. Quais são os jogos criados por um determinado autor? 
+SELECT ?jogo ?nomeJogo WHERE {
+    ?autor :name "Paul Dennen" ;
+           :designedGame ?jogo .
+    ?jogo :name ?nomeJogo .
+}
+
+# 13. Quais os prémios ganhos por um determinado jogo? 
+SELECT ?nomePremio WHERE {
+    ?premio :wonByGame :catan ;
+            :name ?nomePremio .
+}
+
+# 14. Que jogos pertencem à categoria Family? 
+SELECT ?jogo ?nomeJogo WHERE {
+    ?jogo a :Jogo ;
+          :category "Family" ;
+          :name ?nomeJogo .
+}
+
+# 15. Que jogos demoram mais de 60 minutos a jogar (playingTimeMinutes)? 
+SELECT ?jogo ?nomeJogo ?tempo WHERE {
+    ?jogo a :Jogo ;
+          :playingTimeMinutes ?tempo ;
+          :name ?nomeJogo .
+    FILTER(?tempo > 60)
+}
+
+# 16. Em que jogos entra a mecânica Dice Rolling? 
+SELECT ?nomeJogo WHERE {
+    ?mec :name "Dice Rolling" ;
+         :usedInGame ?jogo .
+    ?jogo :name ?nomeJogo .
+}
+
+# 17. Qual a distribuição de jogos por editora, ordenada descendentemente pela quantidade de jogos? 
+SELECT ?nomeEditora (COUNT(?jogo) AS ?numJogos) WHERE {
+    ?editora :publishedGame ?jogo ;
+             :name ?nomeEditora .
+}
+GROUP BY ?editora ?nomeEditora
+ORDER BY DESC(?numJogos)
+
+# 18. Qual a distribuição de jogos por categoria? 
+SELECT ?categoria (COUNT(?jogo) AS ?numJogos) WHERE {
+    ?jogo :category ?categoria .
+}
+GROUP BY ?categoria
+ORDER BY DESC(?numJogos)
+
+# 19. Quais os jogos com mecânicas mais complexas? (Jogos com mais de 3 mecânicas) 
+SELECT ?idJogo ?nomeJogo (GROUP_CONCAT(DISTINCT ?nomeMec; separator=", ") AS ?listaMecanicas) WHERE {
+    ?mec :usedInGame ?idJogo ;
+         :name ?nomeMec .
+    ?idJogo :name ?nomeJogo .
+}
+GROUP BY ?idJogo ?nomeJogo
+HAVING (COUNT(?mec) > 3)
+
+# 20. Lista completa de autores e mecânicas envolvidas se utilizarem exclusivamente jogos da categoria Family (sem repetições). 
+SELECT DISTINCT ?nomeJogo ?nomeAutor ?nomeMecanica WHERE {
+    ?jogo :category "Family" ;
+          :name ?nomeJogo .
+    ?autor :designedGame ?jogo ;
+           :name ?nomeAutor .
+    ?mec :usedInGame ?jogo ;
+         :name ?nomeMecanica .
+}
+ORDER BY ?nomeJogo
+
+# 22. CONSTRUCT isPublishedBy (inverso de publishedGame) 
+CONSTRUCT {
+    ?jogo :isPublishedBy ?editora .
+} WHERE {
+    ?editora :publishedGame ?jogo .
+}
+
+# 22. INSERT isPublishedBy 
+INSERT {
+    ?jogo :isPublishedBy ?editora .
+} WHERE {
+    ?editora :publishedGame ?jogo .
+}
+
+# 24. CONSTRUCT hasMechanic (inverso de usedInGame) 
+CONSTRUCT {
+    ?jogo :hasMechanic ?mec .
+} WHERE {
+    ?mec :usedInGame ?jogo .
+}
+
+# 24. INSERT hasMechanic 
+INSERT {
+    ?jogo :hasMechanic ?mec .
+} WHERE {
+    ?mec :usedInGame ?jogo .
+}
