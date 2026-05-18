@@ -1,6 +1,5 @@
-PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
-
 # 12. Quais são os jogos criados por um determinado autor? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?jogo ?nomeJogo WHERE {
     ?autor :name "Paul Dennen" ;
            :designedGame ?jogo .
@@ -8,12 +7,14 @@ SELECT ?jogo ?nomeJogo WHERE {
 }
 
 # 13. Quais os prémios ganhos por um determinado jogo? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?nomePremio WHERE {
     ?premio :wonByGame :catan ;
             :name ?nomePremio .
 }
 
 # 14. Que jogos pertencem à categoria Family? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?jogo ?nomeJogo WHERE {
     ?jogo a :Jogo ;
           :category "Family" ;
@@ -21,6 +22,7 @@ SELECT ?jogo ?nomeJogo WHERE {
 }
 
 # 15. Que jogos demoram mais de 60 minutos a jogar (playingTimeMinutes)? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?jogo ?nomeJogo ?tempo WHERE {
     ?jogo a :Jogo ;
           :playingTimeMinutes ?tempo ;
@@ -29,6 +31,7 @@ SELECT ?jogo ?nomeJogo ?tempo WHERE {
 }
 
 # 16. Em que jogos entra a mecânica Dice Rolling? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?nomeJogo WHERE {
     ?mec :name "Dice Rolling" ;
          :usedInGame ?jogo .
@@ -36,6 +39,7 @@ SELECT ?nomeJogo WHERE {
 }
 
 # 17. Qual a distribuição de jogos por editora, ordenada descendentemente pela quantidade de jogos? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?nomeEditora (COUNT(?jogo) AS ?numJogos) WHERE {
     ?editora :publishedGame ?jogo ;
              :name ?nomeEditora .
@@ -44,6 +48,7 @@ GROUP BY ?editora ?nomeEditora
 ORDER BY DESC(?numJogos)
 
 # 18. Qual a distribuição de jogos por categoria? 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?categoria (COUNT(?jogo) AS ?numJogos) WHERE {
     ?jogo :category ?categoria .
 }
@@ -51,6 +56,7 @@ GROUP BY ?categoria
 ORDER BY DESC(?numJogos)
 
 # 19. Quais os jogos com mecânicas mais complexas? (Jogos com mais de 3 mecânicas) 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT ?idJogo ?nomeJogo (GROUP_CONCAT(DISTINCT ?nomeMec; separator=", ") AS ?listaMecanicas) WHERE {
     ?mec :usedInGame ?idJogo ;
          :name ?nomeMec .
@@ -60,6 +66,7 @@ GROUP BY ?idJogo ?nomeJogo
 HAVING (COUNT(?mec) > 3)
 
 # 20. Lista completa de autores e mecânicas envolvidas se utilizarem exclusivamente jogos da categoria Family (sem repetições). 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 SELECT DISTINCT ?nomeJogo ?nomeAutor ?nomeMecanica WHERE {
     ?jogo :category "Family" ;
           :name ?nomeJogo .
@@ -71,6 +78,7 @@ SELECT DISTINCT ?nomeJogo ?nomeAutor ?nomeMecanica WHERE {
 ORDER BY ?nomeJogo
 
 # 22. CONSTRUCT isPublishedBy (inverso de publishedGame) 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 CONSTRUCT {
     ?jogo :isPublishedBy ?editora .
 } WHERE {
@@ -78,6 +86,7 @@ CONSTRUCT {
 }
 
 # 22. INSERT isPublishedBy 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 INSERT {
     ?jogo :isPublishedBy ?editora .
 } WHERE {
@@ -85,6 +94,7 @@ INSERT {
 }
 
 # 24. CONSTRUCT hasMechanic (inverso de usedInGame) 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 CONSTRUCT {
     ?jogo :hasMechanic ?mec .
 } WHERE {
@@ -92,6 +102,7 @@ CONSTRUCT {
 }
 
 # 24. INSERT hasMechanic 
+PREFIX : <http://www.di.uminho.pt/rpcw2026/PG61516#>
 INSERT {
     ?jogo :hasMechanic ?mec .
 } WHERE {
